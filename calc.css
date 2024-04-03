@@ -35,7 +35,7 @@
 //		border-radius:50%;
 	}
 
-/*	.button:hover {
+	.button:hover {
 	}
 
 	.button:active,.button_op:active,.button_func:active {
@@ -50,8 +50,8 @@
 	.button_func {
 		background-color:#999999;
 	}
-*/
+
 	#button0 {
 		width:50%;
-//		border-radius:40%;
+		border-radius:40%;
 	}
