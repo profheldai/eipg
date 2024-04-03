@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+ <meta charset="UTF-8">
+	<head>
+        <!-- Title é o título da página que aparece na "tab" do navegador, modifique para ver o que acontece -->
+        <title>MyPage</Title>
+
+       <!-- Abaixo estão os estilos, ou seja, configuração de cores, design da tela, etc
+       Experimente trocar as cores para configurar sua página -->
+        <style>
+            h1 {
+                background-color:blue;
+                color:#1177FF;
+            }
+
+            img {
+                width:10%;
+                height:10%;
+            }
+
+        </style>
+
+       <!-- Abaixo estão os scripts em javascript que darão "vida" à nossa página -->
+        <script>
+            /* (1)
+            function Loading1() {
+                alert("Sua página será carregada após clicar em OK");
+            }
+            (1) */
+
+            /* (2)
+            function Loading2() {
+                if (confirm("Tem certeza que deseja acessar essa página ?")) {
+                    alert("OK... vamos entrar");
+                } else 
+                    alert("Vamos entrar mesmo assim!");
+            }
+            (2) */
+
+            /* (3)
+            function SendName(){
+                var Name = document.getElementById("Name").value;
+                alert("Seja bem vindo "+Name);
+            }
+            (3) */
+
+
+            /* (4)
+            function calc() {
+                var Num1 = parseFloat(document.getElementById("Num1").value);
+                var Num2 = parseFloat(document.getElementById("Num2").value);
+                var Result = document.getElementById("Result");
+                var calcResult = 0;
+                var Op = document.getElementById("operation").value;
+                switch(Op) {
+                    case "sum":
+                        calcResult = Num1 + Num2;
+                        break;
+                    case "sub":
+                        calcResult = Num1 - Num2;
+                        break;
+                    case "mul":
+                        calcResult = Num1 * Num2;
+                        break;
+                    case "div":
+                        calcResult = Num1 / Num2;
+                        break;
+                }
+                if(isNaN(calcResult)) {
+                    alert("Verifique os números digitados");
+                } else {
+                    Result.value = calcResult;
+                }
+            }
+            (4) */
+        
+        </script>
+
+
+    </head>
+
+    <body onLoad="Loading1()">
+
+        <center><h1>Minha página HTML </h1></center>
+
+        <a href="http://www.eipg.com.br" target=_blank><img src="https://eipg.com.br/wp-content/uploads/2022/02/EIPG-NOVOLOGO-2023-OFICIAL-2048x1229.png"></a>
+
+        <br>
+<!-- (3)
+        <p>Digite seu nome abaixo.</p>
+        <input id="Name" type=text size=20/>
+        <input type="button" value="Enviar" onclick="SendName()"/>
+        (3) --> 
+
+<!-- (4)        
+        <table>
+            <tr>
+                <th>Número 1</th>
+                <th>Op</th>
+                <th>Número 2</th>
+                <th>  </th>
+                <th>Resultado</th>
+                <th>  </th>
+            </tr>
+            <tr>
+                <td>
+                    <input id="Num1" type="text" size="20"/>
+                </td>
+                <td>
+                    <select name="operation" id="operation">
+                        <option value="sum">+</option>
+                        <option value="sub">-</option>
+                        <option value="mul">*</option>
+                        <option value="div">/</option>
+                    </select>
+                </td>
+            <td>
+                <input id="Num2" type="text" size="20"/>
+            </td>
+            <td>
+                =
+            </td>
+            <td>
+                <input id="Result" type="text" disabled/>
+            </td>
+            <td>
+                <input type="button" value="Calc" onclick="calc()"/>
+            </td>
+            </tr>
+
+        </table>
+(4) -->
+    </body>
+</html>

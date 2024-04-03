@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+<title>EIPG - Desafio 3</title>
+<link rel="stylesheet" href="aula3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="aula3.js"></script>
+
+</head>
+<body>
+	<div id="container">
+	<H1>EIPG - Desafio 3</H1>
+	</div>
+	<div class="row">
+		<div id="idred" class="collumn">
+			red<br>
+			<p> <span id="redtext" class="number">127</span> - <span id="redtexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127" class="slider" oninput="onslider('idred', 'button1','redtext','redtexthex' )"  id="button1"\>
+		</div>
+		<div id="idgreen" class="collumn">
+			green<br>
+			<p> <span id="greentext" class="number">127</span> - <span id="greentexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127"  class="slider" oninput="onslider('idgreen', 'button2','greentext','greentexthex' )" id="button2"/>
+		</div>
+		<div id="idblue" class="collumn">
+			blue<br>
+			<p> <span id="bluetext" class="number">127</span> - <span id="bluetexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127"  class="slider" oninput="onslider('idblue','button3','bluetext','bluetexthex' )"  id="button3"/>
+		</div>
+	</div>
+	<div id="container" style="background-color:rgb(89,159,172)">
+	</div>
+</body>
+</html> 

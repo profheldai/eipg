@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+<title>EIPG</title>
+<style>
+
+#container {
+text-align:center;
+background-color:#EEEEEE;
+height:200px;
+}
+
+#button1{
+	background-color:blue;
+	color:yellow;
+	height:200px;
+	width:200px;
+	margin-left:50px;
+	margin-right:50px;
+	text-align:center;
+	vertical-align:middle;
+	float:none;
+	border-radius: 35px;
+	box-shadow: 5px 9px #999;
+	font-size:35px;
+}
+
+#button2 {
+	background-color:red;
+	color:yellow;
+	height:200px;
+	width:200px;
+	margin-left:50px;
+	margin-right:50px;
+	text-align:center;
+	vertical-align:middle;
+	float:none;
+	border-radius: 35px;
+	box-shadow: 5px 9px #999;
+	font-size:35px;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#button1').mouseenter(function() {
+	if($('#button1').text() == "Clique Aqui") {
+		$('#button2').text("Clique Aqui");
+		$('#button1').text("Não Clique");
+		$('#button1').css('background-color','red');
+		$('#button2').css('background-color','blue');
+	}
+});
+
+$('#button2').mouseenter(function() {
+	if($('#button2').text() == "Clique Aqui") {
+		$('#button1').text("Clique Aqui");
+		$('#button2').text("Não Clique");
+		$('#button2').css('background-color','red');
+		$('#button1').css('background-color','blue');
+	}
+});
+});
+
+function clicado(btnum) {
+	var bt;
+	if(btnum == 0) {
+		bt = document.getElementById("button1");
+	} else {
+		bt = document.getElementById("button2");
+	}
+	if(bt.innerText == "Não Clique")
+		alert("Infelizmente você clicou no botão errado!!!");
+	else
+		alert("Parabéns! Você conseguiu!!!");
+}
+
+</script>
+
+</head>
+<body>
+<div id="general">
+	<div id="container">
+	</div>
+	<div id="container">
+
+		<button class="button" id="button1" onclick="clicado(0)">Clique Aqui</button>
+		<button class="button" id="button2" onclick="clicado(1)">Não Clique</button>
+	<div id="container">
+	</div>
+</div>
+</body>
+</html> 

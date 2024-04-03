@@ -1,0 +1,155 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+<title>EIPG - Desafio 3</title>
+<style>
+
+* {
+	box-sizing:border-box;
+}
+
+#container {
+text-align:center;
+background-color:#7F7F7F;
+height:33.33%;
+padding:30px;
+}
+
+.number {
+	text-align:center;
+	width:50px;
+}
+
+.collumn {
+	float:left;	
+	text-align:center;
+	width:33.33%;
+	padding:10px;
+}
+
+.row:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+#idred {
+	background-color:#FF0000; 
+	color:yellow;
+}
+
+#idgreen {
+	background-color:green; 
+	color:yellow;
+}
+
+#idblue {
+	background-color:blue; 
+	color:yellow;
+}
+
+#button1{
+	background-color:black;
+	color:yellow;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#button2 {
+	background-color:orange;
+	color:yellow;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#button3 {
+	background-color:yellow;
+	color:yellow;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+
+function onslider(idcolor, sld, txt, txthex) {
+	var bgc = document.getElementById("container");
+	var idc = document.getElementById(idcolor);
+	var slider = document.getElementById(sld);
+	var output = document.getElementById(txt);
+	var outputHex = document.getElementById(txthex);
+	var idr = document.getElementById("button1");
+	var idg = document.getElementById("button2");
+	var idb = document.getElementById("button3");
+  	output.innerHTML = slider.value;
+	outputHex.innerHTML = "#"+parseInt(slider.value,10).toString(16);
+	switch(idcolor) {
+		case "idred":
+			idr.style.backgroundColor="rgb("+slider.value+",0,0)";
+			break;
+		case "idgreen":
+			idg.style.backgroundColor="rgb(0,"+slider.value+",0)";
+			break;
+		case "idblue":
+			idb.style.backgroundColor="rgb(0,0,"+slider.value+")";
+			break;
+
+	}
+    bgc.style.backgroundColor="rgb("+idr.value+","+idg.value+","+idb.value+")";
+}
+
+
+</script>
+
+</head>
+<body>
+<div id="general">
+	<div id="container">
+	<H1>EIPG - Desafio 3</H1>
+	</div>
+	<div class="row">
+		<div id="idred" class="collumn">
+			red<br>
+			<p> <span id="redtext" class="number">127</span> - <span id="redtexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127" class="slider" oninput="onslider('idred', 'button1','redtext','redtexthex' )"  id="button1"\>
+		</div>
+		<div id="idgreen" class="collumn">
+			green<br>
+			<p> <span id="greentext" class="number">127</span> - <span id="greentexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127"  class="slider" oninput="onslider('idgreen', 'button2','greentext','greentexthex' )" id="button2"/>
+		</div>
+		<div id="idblue" class="collumn">
+			blue<br>
+			<p> <span id="bluetext" class="number">127</span> - <span id="bluetexthex" class="number">#7F</span></p>
+			<input type="range" min="0" max="255" value="127"  class="slider" oninput="onslider('idblue','button3','bluetext','bluetexthex' )"  id="button3"/>
+		</div>
+	</div>
+	<div id="container" style="background-color:rgb(89,159,172)">
+	</div>
+</div>
+</body>
+</html> 

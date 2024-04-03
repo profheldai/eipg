@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<!-- Essa parte do código controla os estilos da nossa página-->
+<style>
+
+H1 {
+    background-color:black;
+    color:red;
+    text-align:center;
+    font-size:80px;
+}
+
+.danger {
+    background-color: #f44336;
+    font-size:30; vertical-align:center
+} /* Red */ 
+
+.danger:hover {
+    background: #da190b;
+}
+
+#bsidjpg {
+    width:10px;
+    height:10px;
+}
+
+div.maincontainer {
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div.maincontainer div {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+    background-color: #1122FF;
+    border: 10px solid yellow
+}
+</style>
+
+<!--Essa parte do código controla o funcionamento da nossa página-->
+<script>
+function starting() {
+    document.getElementById("bsidjpg").style.visibility = 'hidden';
+}
+
+function updateimg(){
+    var audio = new Audio('bsod.mp3');
+    audio.play();
+    document.getElementById("bsidjpg").style.visibility = 'visible';
+    document.getElementById("bsidjpg").requestFullscreen();
+//    document.getElementById("bsidjpg").src='bluescreen.jpeg';
+}
+</script>
+</head>
+
+<body onLoad="starting()">
+    <H1>C U I D A D O</H1>
+    <div class="maincontainer">
+        <div class="maindiv">
+            <center>
+                <button class="btn danger" type="image" onclick="updateimg()">
+                    <img width=150 height=100 id="bsid" src="img.jpeg"/>
+                </button>
+                <image id="bsidjpg" src="bluescreen.jpeg"/>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

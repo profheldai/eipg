@@ -1,0 +1,46 @@
+<HTML>
+	<HEAD>
+	 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<TITLE>Calculadora</TITLE>
+		<script type="text/javascript" src="calc.js"></script>
+		<link rel="stylesheet" href="calc.css">
+	</HEAD>
+	<body>
+		<div class="container">
+			<div id="display">
+				<input type="text" id="display_txt" disabled />
+			</div>
+			<div class="button_container">
+				<button class="button_func" id="button_clear" onClick="calc('C')">C</button>
+				<button class="button_func" id="button_invert" onclick="calc('I')">+/-</button>
+				<button class="button_func" id="button_percent" onclick="calc('%')">%</button>
+				<button class="button_op" id="button_division" onclick="calc('/')">/</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button7" onclick="calc('7')">7</button>
+				<button class="button" id="button8" onClick="calc('8')">8</button>
+				<button class="button" id="button9" onClick="calc('9')">9</button>
+				<button class="button_op" id="button_mult" onClick="calc('*')">*</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button4" onClick="calc('4')">4</button>
+				<button class="button" id="button5" onClick="calc('5')">5</button>
+				<button class="button" id="button6" onClick="calc('6')">6</button>
+				<button class="button_op" id="button_minus" onClick="calc('-')">-</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button1" onClick="calc('1')">1</button>
+				<button class="button" id="button2" onClick="calc('2')">2</button>
+				<button class="button" id="button3" onClick="calc('3')">3</button>
+				<button class="button_op" id="button_plus" onClick="calc('+')">+</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button0" onClick="calc('0')">0</button>
+				<button class="button" id="button." onClick="calc('.')">.</button>
+				<button class="button_op" id="button_equal" onClick="calc('=')">=</button>
+		</div>
+	</body>
+	</script>
+
+
+</HTML>

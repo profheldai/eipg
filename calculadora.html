@@ -1,0 +1,164 @@
+<HTML>
+	<HEADER>
+		<TITLE>Calculadora</TITLE>
+	<style>
+	* {
+		box-sizing:border-box;
+	}
+	.container {
+		float: left;
+		width: 25%;
+		margin:0px 100px;
+		background-color:black;
+	}
+
+	#display, #display_txt {
+		width:100%;
+		height: 60px;
+		text-align:right;
+		color:white;
+		background-color:black;
+		font-size:30px;
+		font-weight:bolder;
+	}
+
+	.button_container {
+		width:100%;
+	}
+
+	.button,.button_func, .button_op{
+		border:none;
+		color:white;
+		background-color:#555555;
+		padding:15px 32px;
+		text-align:center;
+		display:inline-block;
+		font-size:16px;
+		float:left;
+		width:25%;
+		border-radius:50%;
+	}
+
+	.button:hover {
+	}
+
+	.button:active,.button_op:active,.button_func:active {
+		background-color:#CCCCCC;
+		transform:translateY(1px);
+	}
+
+	.button_op {
+		background-color:orange;
+	}
+
+	.button_func {
+		background-color:#999999;
+	}
+
+	#button0 {
+		width:50%;
+		border-radius:40%;
+	}
+
+	</style>
+
+	<script>
+		var op_clicked=false;
+		var num1 = 0;
+		var num2 = 0;
+		var op = "+";
+		function calc(value) {
+			var result = 0;
+			var strval = "";
+			var output = document.getElementById("display_txt");
+			switch(value) {
+				case "0":
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "5":
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+				case ".":
+					if(output.value=="" || output.value=="0" || op_clicked == true) {
+						output.value = value;
+						op_clicked = false;
+					} else {
+						output.value += value;
+					}
+					break;
+
+				case "+":
+				case "-":
+				case "*":
+				case "/":
+					num1 = output.value;
+					op = value;
+					op_clicked = true;
+					break;
+				case "%":
+					strval = num1+op+num1+"*"+output.value+"/100"
+					alert(strval);
+					result = eval(strval);
+					output.value=result;
+					num1=result;
+					op_clicked = true;
+					break;
+				case "=":
+					strval = num1+op+output.value;
+					result = eval(strval);
+					output.value=result;
+					op_clicked = true;
+					num1=result;
+					break;
+				case "C":
+					output.value = 0;
+					break;
+
+			}
+		}
+	</script>
+
+	</HEADER>
+	<body>
+		<div class="container">
+			<div id="display">
+				<input type="text" id="display_txt" disabled />
+			</div>
+			<div class="button_container">
+				<button class="button_func" id="button_clear" onClick="calc('C')">C</button>
+				<button class="button_func" id="button_invert" onclick="calc('I')">+/-</button>
+				<button class="button_func" id="button_percent" onclick="calc('%')">%</button>
+				<button class="button_op" id="button_division" onclick="calc('/')">/</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button7" onclick="calc('7')">7</button>
+				<button class="button" id="button8" onClick="calc('8')">8</button>
+				<button class="button" id="button9" onClick="calc('9')">9</button>
+				<button class="button_op" id="button_mult" onClick="calc('*')">*</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button4" onClick="calc('4')">4</button>
+				<button class="button" id="button5" onClick="calc('5')">5</button>
+				<button class="button" id="button6" onClick="calc('6')">6</button>
+				<button class="button_op" id="button_minus" onClick="calc('-')">-</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button1" onClick="calc('1')">1</button>
+				<button class="button" id="button2" onClick="calc('2')">2</button>
+				<button class="button" id="button3" onClick="calc('3')">3</button>
+				<button class="button_op" id="button_plus" onClick="calc('+')">+</button>
+			</div>
+			<div class="button_container">
+				<button class="button" id="button0" onClick="calc('0')">0</button>
+				<button class="button" id="button." onClick="calc('.')">.</button>
+				<button class="button_op" id="button_equal" onClick="calc('=')">=</button>
+		</div>
+	</body>
+	</script>
+
+
+</HTML>
