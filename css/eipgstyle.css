@@ -1,0 +1,49 @@
+* {
+    box-sizing:border-box;
+}
+.container {
+    float: left;
+    width: 80%;
+    margin:100px 100px;
+}
+
+.collumn {
+        float:left;	
+        text-align:center;
+        width:50%;
+        padding:10px;
+        opacity:0.8;
+}
+
+.collumn img {
+    width: 50%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.button {
+    display: block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #090175;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #7e9904;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
