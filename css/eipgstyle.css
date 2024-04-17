@@ -26,7 +26,7 @@
 }
 
 .button {
-    display: block;
+    display: inline;
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
@@ -46,4 +46,32 @@
     background-color: #7e9904;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  .btleft {
+    display:inline;
+    float:left;
+    margin-left:200px;
+    width:50%;
+  }
+  
+  .btright {
+    display:inline;
+    float:right;
+    margin-right:65px;
+    width:20%;
+  }
+
+  img.present {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+  }
+
+  img.present_vertical {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:30%;
   }
